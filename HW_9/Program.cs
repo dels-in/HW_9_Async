@@ -1,11 +1,23 @@
-﻿using System.Reflection.Metadata;
-using HW_9;
+﻿using HW_9;
 
 var image = new ImageDownloader();
 
 image.ImageStarted += HandleStarted;
 image.ImageCompleted += HandleCompleted;
+
 image.Download();
+
+var task = image.DownloadAsync();
+
+var key = Console.ReadKey();
+switch (key.Key)
+{
+    case ConsoleKey.A:
+        return;
+    default:
+        Console.WriteLine(task.IsCompleted);
+        break;
+}
 
 Console.WriteLine("Нажмите любую клавишу для выхода");
 Console.ReadKey();
