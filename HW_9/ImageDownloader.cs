@@ -30,8 +30,6 @@ public class ImageDownloader
     {
         ImageStarted?.Invoke();
 
-        var key = Console.ReadKey();
-        
         string remoteUri = "https://bfoto.ru/oboi/oboi_priroda_1920x1200.jpg";
 
         string fileName = "bigImage.jpg";
@@ -43,15 +41,6 @@ public class ImageDownloader
 
         ImageCompleted?.Invoke();
         
-        switch (key.Key)
-        {
-            case ConsoleKey.A:
-                Console.WriteLine(task.IsCompleted);
-                break;
-            default:
-                return task;
-        }
-
         return task;
     }
 }

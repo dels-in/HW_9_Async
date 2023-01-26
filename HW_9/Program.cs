@@ -5,12 +5,21 @@ var image = new ImageDownloader();
 image.ImageStarted += HandleStarted;
 image.ImageCompleted += HandleCompleted;
 
+var task = image.DownloadAsync();
 image.Download();
 
-var task = image.DownloadAsync();
-
-Console.WriteLine("Нажмите любую клавишу для выхода");
-Console.ReadKey();
+while (true)
+{
+    var key = Console.ReadKey();
+    switch (key.Key)
+    {
+        case ConsoleKey.A:
+            Console.WriteLine($"\n{task.IsCompleted}");
+            break;
+        default:
+            return;
+    }
+}
 
 void HandleStarted()
 {
