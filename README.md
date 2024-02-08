@@ -10,17 +10,6 @@
 <ol>
 <li>
 Напишите класс ImageDownloader. В этом классе должен быть метод Download, который скачивает картинку из интернета. Для загрузки картинки можно использовать примерно такой код: https://dotnetfiddle.net/5oT1Hi
-<div>
-// Откуда будем качать
-string remoteUri = "https://effigis.com/wp-content/uploads/2015/02/Iunctus_SPOT5_5m_8bit_RGB_DRA_torngat_mountains_national_park_8bits_1.jpg";
-// Как назовем файл на диске
-string fileName = "bigimage.jpg";
-// Качаем картинку в текущую директорию
-var myWebClient = new WebClient();
-Console.WriteLine("Качаю \"{0}\" из \"{1}\" .......\n\n", fileName, remoteUri);
-myWebClient.DownloadFile(remoteUri, fileName);
-Console.WriteLine("Успешно скачал \"{0}\" из \"{1}\"", fileName, remoteUri);
-</div>
 </li>
 <li>
 Создайте экземпляр этого класса и вызовите скачивание большой картинки, например, https://effigis.com/wp-content/uploads/2015/02/Iunctus_SPOT5_5m_8bit_RGB_DRA_torngat_mountains_national_park_8bits_1.jpg
@@ -39,4 +28,3 @@ Console.WriteLine("Успешно скачал \"{0}\" из \"{1}\"", fileName, 
   В конце работы программы выводите теперь текст "Нажмите клавишу A для выхода или любую другую клавишу для проверки статуса скачивания" и ожидайте нажатия любой клавиши. Если нажата клавиша "A" - выходите из программы. В противном случае выводите состояние загрузки картинки (True - загружена, False - нет). Проверить состояние можно через вызов Task.IsCompleted.
 </li>
 </ol>
-Поздравляю! Ваша загрузка картинки работает асинхронно с основным потоком консоли.
